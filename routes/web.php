@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('blog')
+        ->name('blog.')
+        ->group(function() {
+            Route::get('/', 'BlogController@index');
+        });

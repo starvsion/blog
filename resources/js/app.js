@@ -8,6 +8,20 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+
+/**
+ * Inititalize Vue Plugins and Components
+ */
+
+import ElementUI from "element-ui";
+import { Message, Notification } from "element-ui";
+/** Element UI default locale is Simplified Chinese, do this to switch to English */
+import locale from "element-ui/lib/locale/lang/en";
+
+Vue.use(ElementUI, { locale });
+global.Message = Message;
+global.Notification = Notification;
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -16,10 +30,8 @@ window.Vue = require('vue');
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+const files = require.context('./components/', true, /\.vue$/i);
+files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
