@@ -1,0 +1,27 @@
+@import "variables";
+
+body {
+    font-family: $font-family;
+    font-stretch: expanded;
+    color: $text-color;
+    font-weight: 500;
+}
+
+b, small {
+    color: $small-text-color;
+    font-weight: 500;
+}
+
+a {
+    color: $a-text-color;
+
+    :visited {
+        color: darken($a-text-color, 10%);
+    }
+}
+
+.text {
+    &.red {
+        color: $red;
+    }
+}

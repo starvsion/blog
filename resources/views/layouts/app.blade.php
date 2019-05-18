@@ -10,12 +10,13 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-
-        <base href="{{env('APP_URL')}}">
     </head>
     <body>
         <div id="app">
             <el-container>
+                <el-header>
+                    @yield('header')
+                </el-header>
                 <el-main>
                     @yield('content')
                 </el-main>

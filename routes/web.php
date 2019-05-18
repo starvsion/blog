@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('resume');
 });
 
 Route::prefix('blog')
@@ -20,3 +20,6 @@ Route::prefix('blog')
         ->group(function() {
             Route::get('/', 'BlogController@index');
         });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

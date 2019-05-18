@@ -21,3 +21,8 @@ public/css/
 public/js/
 
 public/mix-manifest.json
+
+.idea
+.vscode
+.phpstorm.meta.php
+_ide_helper.php
