@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Wink\WinkPost;
+use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
@@ -15,7 +15,7 @@ class BlogController extends Controller
             ->simplePaginate(12);
 
         return view('blog.index', [
-            'posts' => $posts
+            'posts' => $posts,
         ]);
     }
 }

@@ -21,7 +21,7 @@ Route::get('/resume', function () {
 
 Route::prefix('blog')
         ->name('blog.')
-        ->group(function() {
+        ->group(function () {
             Route::get('/', 'BlogController@index');
         });
 Auth::routes();
