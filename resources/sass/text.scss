@@ -25,3 +25,11 @@ a {
         color: $red;
     }
 }
+
+#{headings(1,6)}, .label {
+    color: $h-text-color;
+    font-family: "Oswald", "PingFang SC", serif;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    font-variant: small-caps;
+}

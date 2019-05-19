@@ -4,8 +4,8 @@
             <h3 class="logo">Shuyi(疏義君)</h3>
         </el-menu-item>
         <el-menu-item index="/">Home</el-menu-item>
+        <el-menu-item index="/resume">Resume</el-menu-item>
         <el-menu-item index="/login" class="float right">Login</el-menu-item>
-        <el-menu-item index="/register" class="float right">Register</el-menu-item>
         <el-submenu v-if="hasLoggedIn" class="float right" index="/user">
             <template slot="title">User</template>
             <el-menu-item index="/logout">

@@ -1,20 +1,12 @@
 @import "variables";
 
-#{headings(1,6)}, .label {
-    color: $h-text-color;
-    font-family: "Oswald", "PingFang SC", serif;
-    font-weight: 600;
-    letter-spacing: 0.07em;
-    font-variant: small-caps;
-}
-
 .el-form-item__label {
    @extend .label;
    font-weight: 500;
 }
 
 
-button,el-button {
+button,.el-button {
     @extend .label;
     color: $button-color;
 }
@@ -24,14 +16,5 @@ button,el-button {
     font-style: italic;
     @extend .label;
     margin-block-start: 0;
-}
-
-.float {
-    &.right {
-        float: right;
-    }
-
-    &.left {
-        float: left;
-    }
+    float: right;
 }

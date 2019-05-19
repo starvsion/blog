@@ -17,10 +17,18 @@ import ElementUI from "element-ui";
 import { Message, Notification } from "element-ui";
 /** Element UI default locale is Simplified Chinese, do this to switch to English */
 import locale from "element-ui/lib/locale/lang/en";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faLinkedinIn,faGithub,faStackOverflow } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faLinkedinIn,faGithub,faStackOverflow);
 
 Vue.use(ElementUI, { locale });
 global.Message = Message;
 global.Notification = Notification;
+
+Vue.component('fa-icon', FontAwesomeIcon);
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -38,6 +46,7 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
 
 const app = new Vue({
     el: '#app',

@@ -12,8 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('resume');
+    return redirect()->route('resume.index');
 });
+
+Route::get('/resume', function () {
+    return view('resume');
+})->name('resume.index');
 
 Route::prefix('blog')
         ->name('blog.')
