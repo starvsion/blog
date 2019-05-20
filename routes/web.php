@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect()->route('resume.index');
+    return redirect()->route('home');
 });
 
 Route::get('/resume', function () {
@@ -27,3 +27,4 @@ Route::prefix('blog')
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/contact-me', 'HomeController@contactMe')->name('contact.me');

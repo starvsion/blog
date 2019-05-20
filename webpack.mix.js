@@ -15,5 +15,4 @@ let webpackConfig = require("./webpack.config");
 mix.webpackConfig(webpackConfig)
     .js("resources/js/app.js", "public/js")
     .sass("resources/sass/app.scss", "public/css")
-    .sass("resources/sass/online-resume.scss", "public/css")
     .version();

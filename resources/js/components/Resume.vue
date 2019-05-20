@@ -12,20 +12,17 @@
                 </h2>
 
                 <div class="el-row" :gutter="10">
-                    <el-col :span="6">
+                    <el-col :span="8">
                         <fa-icon :icon="['fab','github']" class="mr-1"/>
                          <a href="https://github.com/starvsion">https://github.com/starvsion</a>
                     </el-col>
-                    <el-col :span="6">
+                    <el-col :span="8">
                         <fa-icon prefix="fab" :icon="['fab','linkedin-in']" class="mr-1"/>
-                         <a href="https://github.com/starvsion">https://github.com/starvsion</a>
+                         <a href="https://bit.ly/2EuZUf5">https://bit.ly/2EuZUf5</a>
                     </el-col>
-                    <el-col :span="6">
+                    <el-col :span="8">
                         <fa-icon prefix="fab" :icon="['fab','stack-overflow']" class="mr-1"/>
-                         <a href="https://github.com/starvsion">https://github.com/starvsion</a>
-                    </el-col>
-                    <el-col :span="6">
-
+                         <a href="https://bit.ly/2LWcZ77">https://bit.ly/2LWcZ77</a>
                     </el-col>
                 </div>
 
@@ -36,6 +33,21 @@
                         <span>
                             Laravel + Vue = <span class="text red">❤</span>, prefers CentOS and Fedora, dabbles in Bootstrap and Element UI, and I think I am way over my 100k lines of (effective) code...
                         </span>
+                    </div>
+                </div>
+
+                <div class="list-card">
+                    <span class="exp">TL;DR</span>
+                    <div>
+                        <h3>#Laravel</h3>
+                        <h3>#Vue</h3>
+                        <h3>#FullStack</h3>
+                        <h3>#DevOps</h3>
+                        <h3>#FinTech</h3>
+                        <h3>#InfoSec</h3>
+                        <h3>#CSMajor</h3>
+                        <h3>#OOP</h3>
+                        <h3>#Scrum</h3>
                     </div>
                 </div>
             </div>
@@ -206,6 +218,8 @@
                         <p>Worked on these projects: Investor Relations Module, CapTable, Compliance Platform, Portfolio
                            Management.
                         </p>
+                        <br>
+                        <p><b>Technology:</b> Laravel, Lumen Vue, JQuery, MySQL, Linux </p>
                     </el-popover>
                     <br>
                     <span class="date">Today - June. 2017</span>
@@ -234,6 +248,9 @@
                         </p>
                         <br>
                         <p>Worked on these projects: EMR Integration, Online Booking System API</p>
+                        <br>
+                        <p><b>Technology:</b> PHP, RESTful API, JQuery, MySQL, Linux, Java, C# </p>
+
                     </el-popover>
                     <span class="date">Feb. 2017 - Jan. 2016</span>
                 </li>
@@ -375,7 +392,7 @@
     }
 
     .hero {
-        margin: 50px auto;
+        margin: auto;
         position: relative;
     }
 
@@ -411,6 +428,7 @@
         font-size: 1.9em;
         font-weight: 300;
         margin-top: 1em;
+        margin-bottom: 1em;
         line-height: 55px;
         font-variant: unset;
     }
