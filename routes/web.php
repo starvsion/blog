@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,6 +9,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
 Route::get('/', function () {
     return redirect()->route('home');
@@ -22,9 +22,13 @@ Route::get('/resume', function () {
 Route::prefix('blog')
         ->name('blog.')
         ->group(function () {
-            Route::get('/', 'BlogController@index');
+            Route::get('/', 'BlogController@index')->name('index');
         });
+
+Route::apiResource('contact-me', 'ContactMeController');
+Route::get('/contact-me/list', function () {
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/contact-me', 'HomeController@contactMe')->name('contact.me');

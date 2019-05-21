@@ -5,7 +5,7 @@
         </el-menu-item>
         <el-menu-item index="/">Home</el-menu-item>
         <el-menu-item index="/resume">Resume</el-menu-item>
-        <el-menu-item index="/contact-me">Contact Me</el-menu-item>
+        <el-menu-item index="/contact-me/index">Contact Me</el-menu-item>
 
         <el-menu-item index="/login" class="float right">Login</el-menu-item>
         <el-submenu v-if="hasLoggedIn" class="float right" index="/user">
