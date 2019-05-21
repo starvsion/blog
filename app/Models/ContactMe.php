@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Concerns\HasTimestamps;
 
 class ContactMe extends Model
 {
@@ -14,6 +14,6 @@ class ContactMe extends Model
         'read_at',
         'created_at',
         'updated_at',
-        'deleted_at'
+        'deleted_at',
     ];
 }

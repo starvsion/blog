@@ -18,12 +18,13 @@ class ContactMeController extends Controller
         //
     }
 
-    public function list(Request $request) {
+    public function list(Request $request)
+    {
         $contactMeRecords = ContactMe::all();
 
         if (! empty($request->query)) {
             $contactMeRecords->search($request->query);
-        };
+        }
 
         ContactMeResource::collection($contactMeRecords->paginate());
     }

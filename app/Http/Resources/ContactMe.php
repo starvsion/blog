@@ -13,7 +13,7 @@ class ContactMe extends ResourceCollection
      *
      * @return array
      */
-    public function toArray ($request) : array
+    public function toArray($request) : array
     {
         return [
             'id'         => $this->id,

@@ -11,7 +11,7 @@ class AddContactMeTable extends Migration
      *
      * @return void
      */
-    public function up ()
+    public function up()
     {
         Schema::create('contact_me', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -29,7 +29,7 @@ class AddContactMeTable extends Migration
      *
      * @return void
      */
-    public function down ()
+    public function down()
     {
         Schema::dropIfExists('contact_me');
     }
