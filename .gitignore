@@ -26,3 +26,4 @@ public/mix-manifest.json
 .vscode
 .phpstorm.meta.php
 _ide_helper.php
+supervisord.pid
