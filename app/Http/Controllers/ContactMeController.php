@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactMeRequest;
 use App\Models\ContactMe;
 use Illuminate\Http\Request;
 use App\Http\Resources\ContactMe as ContactMeResource;
@@ -13,50 +14,61 @@ class ContactMeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index ()
     {
-        //
+        return view('contact-me');
     }
 
-    public function list(Request $request)
+    public function list (Request $request)
     {
-        $contactMeRecords = ContactMe::all();
+        $contactMeRecords = new ContactMe();
 
-        if (! empty($request->query)) {
-            $contactMeRecords->search($request->query);
+        if (!empty($request->searchQuery)) {
+            $contactMeRecords->where('email', $request->query);
         }
 
-        ContactMeResource::collection($contactMeRecords->paginate());
+        return ContactMeResource::collection($contactMeRecords->paginate($request->perPage ?? 50));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return void
      */
-    public function create()
+    public function create (Request $request)
     {
-        //
+
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param \App\Http\Requests\ContactMeRequest $request
+     *
+     * @return \Illuminate\Http\Response | array
      */
-    public function store(Request $request)
+    public function store (ContactMeRequest $request)
     {
-        //
+         try {
+            ContactMe::create($request->only(['name', 'email', 'message']));
+            return response('', 204);
+        } catch (\Throwable $e) {
+            return [
+                'message' => $e->getMessage(),
+            ];
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\ContactMe  $contactMe
+     * @param \App\ContactMe $contactMe
+     *
      * @return \Illuminate\Http\Response
      */
-    public function show(ContactMe $contactMe)
+    public function show (ContactMe $contactMe)
     {
         //
     }
@@ -64,10 +76,11 @@ class ContactMeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\ContactMe  $contactMe
+     * @param \App\ContactMe $contactMe
+     *
      * @return \Illuminate\Http\Response
      */
-    public function edit(ContactMe $contactMe)
+    public function edit (ContactMe $contactMe)
     {
         //
     }
@@ -75,11 +88,12 @@ class ContactMeController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\ContactMe  $contactMe
+     * @param \Illuminate\Http\Request $request
+     * @param \App\ContactMe           $contactMe
+     *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ContactMe $contactMe)
+    public function update (Request $request, ContactMe $contactMe)
     {
         //
     }
@@ -87,10 +101,11 @@ class ContactMeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ContactMe  $contactMe
+     * @param \App\ContactMe $contactMe
+     *
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ContactMe $contactMe)
+    public function destroy (ContactMe $contactMe)
     {
         //
     }

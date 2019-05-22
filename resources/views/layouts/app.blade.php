@@ -21,11 +21,12 @@
         <meta property="og:image:size" content="300"/>
 
         <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+        @yield('extra-style')
     </head>
-    <body>
-        <div id="app">
+    <body class="m-0">
+        <div id="app" class="h-100 w-100">
             <el-container>
-                <el-header>
+                <el-header class="px-0 w-100">
                     @yield('header')
                 </el-header>
                 <el-main>

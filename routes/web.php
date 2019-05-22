@@ -25,10 +25,12 @@ Route::prefix('blog')
             Route::get('/', 'BlogController@index')->name('index');
         });
 
+Route::get('/contact-me/list','ContactMeController@list');
 Route::apiResource('contact-me', 'ContactMeController');
-Route::get('/contact-me/list', function () {
-});
 
-Auth::routes();
+Route::get('/admin/contact-me', 'AdminController@contactMe')
+    ->middleware('auth', 'can:view-admin');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+

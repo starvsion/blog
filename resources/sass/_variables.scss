@@ -14,11 +14,13 @@ $pink: #f66d9b;
 $red: #C10E1F;
 
 //text colors
-$text-color: #222;
-$h-text-color: darken($text-color, 20%);
-$a-text-color: lighten($text-color, 10%);
-$small-text-color: lighten($text-color, 15%);
+$text-color: #111;
+$h-text-color: lighten($text-color, 20%);
+$a-text-color: darken($text-color, 10%);
+$small-text-color: darken($text-color, 15%);
 $button-color: #FFF;
+$base-bg-color: #1E272C;
+$form-bg-color: lighten($base-bg-color, 20%);
 
 /* theme colors */
 $--color-primary: $blue;

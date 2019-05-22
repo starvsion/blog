@@ -97,12 +97,13 @@
 
     .el-menu::v-deep {
         border-bottom: 0 !important;
-        background: transparent;
+        background: transparent !important;
         color: white;
         width: 100%;
 
         > .el-menu-item {
             color: rgba(255, 255, 255, .8);
+            background: transparent !important;
 
             &.logo-item {
                 display: none;

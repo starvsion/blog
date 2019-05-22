@@ -10,6 +10,15 @@ class ContactMe extends Model
 {
     use SoftDeletes, HasTimestamps;
 
+    protected $table = 'contact_me';
+    protected $primaryKey = 'id';
+
+    protected $fillable = [
+        'name',
+        'email',
+        'message',
+    ];
+
     protected $dates = [
         'read_at',
         'created_at',

@@ -5,15 +5,15 @@
                 <template #header class="clearfix">
                     <h3>LOGIN</h3>
                 </template>
-                <el-form ref="form" :model="model" :rules="rules" @submit.stop>
+                <el-form ref="form" :model="model" :rules="rules" action="/login">
                     <el-form-item label="Email Address" prop="email">
-                        <el-input v-model="model.email"></el-input>
+                        <el-input v-model="model.email" name="email"></el-input>
                     </el-form-item>
                     <el-form-item label="Password" prop="password">
-                        <el-input v-model="model.password" show-password></el-input>
+                        <el-input v-model="model.password" name="password" show-password></el-input>
                     </el-form-item>
                     <el-form-item label="Remember Me">
-                        <el-switch v-model="model.remember"></el-switch>
+                        <el-switch v-model="model.remember" name="remember"></el-switch>
                     </el-form-item>
                     <el-form-item>
                         <el-button icon="el-icon-d-arrow-right" type="primary" @click.native.prevent="submit">
@@ -79,12 +79,12 @@
             submit () {
                 this.$refs.form.validate((valid) => {
                     if (valid) {
-                        axios.post("/login")
+                        axios.post("/login", this.model)
                             .then((response) => {
-                                console.log(response);
+                                window.location.replace('/');
                             })
                             .catch((error) => {
-
+                                Message.error(error.data.message);
                             });
                     } else {
                         Message.error("There are errors on your form, please check");

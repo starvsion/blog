@@ -11,11 +11,12 @@ class AddContactMeTable extends Migration
      *
      * @return void
      */
-    public function up()
+    public function up ()
     {
         Schema::create('contact_me', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            $table->string('email');
             $table->longText('message');
             $table->dateTime('read_at')
                 ->nullable();
@@ -29,7 +30,7 @@ class AddContactMeTable extends Migration
      *
      * @return void
      */
-    public function down()
+    public function down ()
     {
         Schema::dropIfExists('contact_me');
     }
