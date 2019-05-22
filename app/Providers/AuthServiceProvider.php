@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use App\User;
 use Gate;
+use App\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -22,7 +22,7 @@ class AuthServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot ()
+    public function boot()
     {
         $this->registerPolicies();
 

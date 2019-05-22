@@ -13,7 +13,7 @@ class ContactMe extends JsonResource
      *
      * @return array
      */
-    public function toArray ($request): array
+    public function toArray($request): array
     {
         return
            [
@@ -26,6 +26,5 @@ class ContactMe extends JsonResource
                     ? 'New'
                     : 'Read',
             ];
-
     }
 }

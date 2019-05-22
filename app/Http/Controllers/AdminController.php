@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function contactMe() {
+    public function contactMe()
+    {
         return view('admin.admin-contact-me');
     }
 }

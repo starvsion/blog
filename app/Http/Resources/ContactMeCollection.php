@@ -16,7 +16,7 @@ class ContactMeCollection extends ResourceCollection
      *
      * @return array
      */
-    public function toArray ($request): array
+    public function toArray($request): array
     {
         return ['data' => $this->collection];
     }

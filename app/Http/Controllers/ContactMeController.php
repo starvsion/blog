@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ContactMeRequest;
 use App\Models\ContactMe;
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactMeRequest;
 use App\Http\Resources\ContactMe as ContactMeResource;
 
 class ContactMeController extends Controller
@@ -14,16 +14,16 @@ class ContactMeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index ()
+    public function index()
     {
         return view('contact-me');
     }
 
-    public function list (Request $request)
+    public function list(Request $request)
     {
         $contactMeRecords = new ContactMe();
 
-        if (!empty($request->searchQuery)) {
+        if (! empty($request->searchQuery)) {
             $contactMeRecords->where('email', $request->query);
         }
 
@@ -37,9 +37,8 @@ class ContactMeController extends Controller
      *
      * @return void
      */
-    public function create (Request $request)
+    public function create(Request $request)
     {
-
     }
 
     /**
@@ -49,10 +48,11 @@ class ContactMeController extends Controller
      *
      * @return \Illuminate\Http\Response | array
      */
-    public function store (ContactMeRequest $request)
+    public function store(ContactMeRequest $request)
     {
-         try {
+        try {
             ContactMe::create($request->only(['name', 'email', 'message']));
+
             return response('', 204);
         } catch (\Throwable $e) {
             return [
@@ -68,7 +68,7 @@ class ContactMeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function show (ContactMe $contactMe)
+    public function show(ContactMe $contactMe)
     {
         //
     }
@@ -80,7 +80,7 @@ class ContactMeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function edit (ContactMe $contactMe)
+    public function edit(ContactMe $contactMe)
     {
         //
     }
@@ -93,7 +93,7 @@ class ContactMeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function update (Request $request, ContactMe $contactMe)
+    public function update(Request $request, ContactMe $contactMe)
     {
         //
     }
@@ -105,7 +105,7 @@ class ContactMeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function destroy (ContactMe $contactMe)
+    public function destroy(ContactMe $contactMe)
     {
         //
     }
