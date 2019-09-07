@@ -16,7 +16,9 @@
                 <a href="/logout">Logout</a>
             </el-menu-item>
         </el-submenu>
-        <el-menu-item index="/login" v-else class="float right">Login</el-menu-item>
+        <el-menu-item index="/login" v-else class="float right">
+            Login
+        </el-menu-item>
     </el-menu>
 </template>
 
