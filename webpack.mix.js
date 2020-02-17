@@ -1,5 +1,6 @@
 const mix = require("laravel-mix");
 let webpackConfig = require("./webpack.config");
+let productionSourceMaps = false;
 
 /*
  |--------------------------------------------------------------------------
@@ -15,4 +16,5 @@ let webpackConfig = require("./webpack.config");
 mix.webpackConfig(webpackConfig)
     .js("resources/js/app.js", "public/js")
     .sass("resources/sass/app.scss", "public/css")
+    .sourceMaps(productionSourceMaps, 'source-map')
     .version();

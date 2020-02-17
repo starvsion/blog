@@ -73,7 +73,7 @@
                 this.$refs.form.validate((valid) => {
                     if (valid) {
                         this.isBusy = true;
-                        axios.post("/contact-me", this.model)
+                        axios.post("/api/contact-me", this.model)
                             .then(() => {
                                 this.$alert("Your information has been submitted, I will get back to you as soon as possible.")
                                     .then(() => {

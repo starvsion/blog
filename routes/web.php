@@ -11,24 +11,14 @@
 */
 Auth::routes();
 
-Route::get('/', function () {
-    return redirect()->route('home');
-});
-
-Route::get('/resume', function () {
-    return view('resume');
-})->name('resume.index');
-
 Route::prefix('blog')
         ->name('blog.')
         ->group(function () {
             Route::get('/', 'BlogController@index')->name('index');
         });
-
-Route::get('/contact-me/list', 'ContactMeController@list');
-Route::apiResource('contact-me', 'ContactMeController');
-
+      
 Route::get('/admin/contact-me', 'AdminController@contactMe')
     ->middleware('auth', 'can:view-admin');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/{any}', 'SpaController@index')
+    ->where('any', '.*');

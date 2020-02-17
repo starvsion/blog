@@ -13,6 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
-});
+});*/
+
+Route::prefix('contact-me')
+    ->group(function () {
+        Route::get('/list', 'ContactMeController@list');
+        Route::post('/', 'ContactMeController@store');
+    });

@@ -20,15 +20,19 @@ import locale from "element-ui/lib/locale/lang/en";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faLinkedinIn,faGithub,faStackOverflow } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import VueRouter from "vue-router";
+import VueClipboard from "vue-clipboard2";
 
-library.add(faLinkedinIn,faGithub,faStackOverflow);
 
 Vue.use(ElementUI, { locale });
 global.Message = Message;
 global.Notification = Notification;
 
+library.add(faLinkedinIn,faGithub,faStackOverflow);
 Vue.component('fa-icon', FontAwesomeIcon);
 
+Vue.use(VueRouter);
+Vue.use(VueClipboard);
 
 /**
  * The following block of code may be used to automatically register your
@@ -47,7 +51,48 @@ files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+import Toolbox from "./components/Toolbox";
+import HomePage from "./components/HomePage";
+import Resume from "./components/Resume";
+import ContactMe from "./components/ContactMe";
+
+const router = new VueRouter({
+    mode: 'history',
+    routes: [
+        {
+            // will match everything
+            path: '*'
+        },
+        {
+            path: '/',
+            name: "default",
+            component: HomePage,
+        },
+        {
+            path: "/home",
+            name: "home",
+            component: HomePage,
+        },
+        {
+            path: "/resume",
+            name: "resume",
+            component: Resume,
+        },
+        {
+            path: "/contact-me",
+            name: "contact-me",
+            component: ContactMe,
+        },
+        {
+            path: '/toolbox',
+            name: 'toolbox',
+            component: Toolbox,
+        },
+    ],
+});
+
 
 const app = new Vue({
     el: '#app',
+    router
 });

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <el-card>
         <el-row class="container">
             <div class="hero">
                 <h1 class="name"><strong>Yang</strong> Junhai(Shuyi)</h1>
@@ -283,7 +283,7 @@
                 <a href="https://dribbble.com/shots/4342703-Minimal-resume-freebie-for-junior-self-taught-people">Nicolas Meuzard</a>
             </span>
         </footer>
-    </div>
+    </el-card>
 </template>
 
 <script>

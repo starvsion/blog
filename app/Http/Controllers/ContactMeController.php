@@ -10,15 +10,9 @@ use Illuminate\Http\Request;
 class ContactMeController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        return view('contact-me');
-    }
-
+    * @param \Illuminate\Http\Request $request
+    * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+    */
     public function list(Request $request)
     {
         $contactMeRecords = new ContactMe();
@@ -27,18 +21,9 @@ class ContactMeController extends Controller
             $contactMeRecords->where('email', $request->query);
         }
 
-        return ContactMeResource::collection($contactMeRecords->paginate($request->perPage ?? 50));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return void
-     */
-    public function create(Request $request)
-    {
+        return ContactMeResource::collection(
+            $contactMeRecords->paginate($request->perPage ?? 50)
+        );
     }
 
     /**
@@ -59,54 +44,5 @@ class ContactMeController extends Controller
                 'message' => $e->getMessage(),
             ];
         }
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param \App\ContactMe $contactMe
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function show(ContactMe $contactMe)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param \App\ContactMe $contactMe
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(ContactMe $contactMe)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param \App\ContactMe           $contactMe
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, ContactMe $contactMe)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param \App\ContactMe $contactMe
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(ContactMe $contactMe)
-    {
-        //
     }
 }
