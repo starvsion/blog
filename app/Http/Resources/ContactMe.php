@@ -17,14 +17,14 @@ class ContactMe extends JsonResource
     {
         return
            [
-                'id'         => $this->id,
-                'name'       => $this->name,
-                'email'      => $this->email,
-                'message'    => $this->message,
-                'created_at' => $this->created_at->toDateString(),
-                'status'     => empty($this->read_at)
-                    ? 'New'
-                    : 'Read',
-            ];
+               'id'         => $this->id,
+               'name'       => $this->name,
+               'email'      => $this->email,
+               'message'    => $this->message,
+               'created_at' => $this->created_at->toDateString(),
+               'status'     => empty($this->read_at)
+                   ? 'New'
+                   : 'Read',
+           ];
     }
 }

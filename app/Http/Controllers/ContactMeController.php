@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ContactMe;
-use Illuminate\Http\Request;
 use App\Http\Requests\ContactMeRequest;
 use App\Http\Resources\ContactMe as ContactMeResource;
+use App\Models\ContactMe;
+use Illuminate\Http\Request;
 
 class ContactMeController extends Controller
 {

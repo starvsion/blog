@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Wink\WinkPost;
 use Illuminate\Http\Request;
+use Wink\WinkPost;
 
 class BlogController extends Controller
 {
