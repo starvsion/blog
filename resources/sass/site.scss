@@ -1,0 +1,23 @@
+@import "variables";
+
+.el-form-item__label {
+   @extend .label;
+   font-weight: 500;
+}
+
+
+button,.el-button {
+    @extend .label;
+    color: $button-color;
+}
+
+.logo {
+    font-family: "EB Garamond", "PingFang SC", serif;
+    font-style: italic;
+    @extend .label;
+    margin-block-start: 0;
+}
+
+body {
+    background-color: #1E272C;
+}
