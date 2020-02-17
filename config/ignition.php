@@ -69,7 +69,7 @@ return [
     */
 
     'ignored_solution_providers' => [
-        'Facade\Ignition\Http\Controllers\ExecuteSolutionController'
+        'Facade\Ignition\Http\Controllers\ExecuteSolutionController',
     ],
 
     /*

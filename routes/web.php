@@ -16,7 +16,7 @@ Route::prefix('blog')
         ->group(function () {
             Route::get('/', 'BlogController@index')->name('index');
         });
-      
+
 Route::get('/admin/contact-me', 'AdminController@contactMe')
     ->middleware('auth', 'can:view-admin');
 

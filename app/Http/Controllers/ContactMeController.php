@@ -10,9 +10,9 @@ use Illuminate\Http\Request;
 class ContactMeController extends Controller
 {
     /**
-    * @param \Illuminate\Http\Request $request
-    * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
-    */
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
+     */
     public function list(Request $request)
     {
         $contactMeRecords = new ContactMe();
