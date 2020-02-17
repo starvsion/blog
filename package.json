@@ -29,7 +29,7 @@
         "laravel-echo": "^1.5.3",
         "laravel-mix": "^4.0.7",
         "laravel-mix-alias": "^1.0.1",
-        "lodash": "^4.17.5",
+        "lodash": "^4.17.13",
         "pusher-js": "^4.4.0",
         "vue": "^2.6.10",
         "vue-router": "^3.0.6",
