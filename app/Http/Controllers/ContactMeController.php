@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class ContactMeController extends Controller
 {
     /**
-     * @param \Illuminate\Http\Request $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection
      */
     public function list(Request $request)
@@ -29,8 +29,7 @@ class ContactMeController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param \App\Http\Requests\ContactMeRequest $request
-     *
+     * @param  \App\Http\Requests\ContactMeRequest  $request
      * @return \Illuminate\Http\Response | array
      */
     public function store(ContactMeRequest $request)
